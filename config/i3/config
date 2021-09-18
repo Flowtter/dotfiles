@@ -1,0 +1,141 @@
+# Set mod variable to super key
+set $mod Mod4
+
+# Set common scripts to vars
+set $rofi ~/scripts/rofi/launch.sh
+
+# Turn borders off
+for_window [class="^.*"] border pixel 0
+
+# Change gap size
+gaps outer 20
+gaps inner 20
+gaps top 25
+
+# Drag floating windows
+floating_modifier $mod
+
+# Start a URxvt terminal emulator instance
+bindsym $mod+Shift+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start rofi with appmenu and tabmenu
+bindsym $mod+d exec $rofi appmenu
+bindsym $mod+Tab exec dmenu_run
+bindsym $mod+Shift+e exec $rofi powermenu
+
+# Set up screenshots and partial screenshots
+bindsym --release Print exec maim ~/images/scrots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym --release Shift+Print exec maim -s ~/images/scrots/`date +%Y-%m-%d_%H:%M:%S`.png
+
+# Bind audio keys to pactl volume control
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+
+# Bind brightness keys to light interface
+bindsym XF86MonBrightnessUp exec light -s sysfs/backlight/radeon_bl0 -A 5
+bindsym XF86MonBrightnessDown exec light -s sysfs/backlight/radeon_bl0 -U 5
+
+# Move focus with the arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move windows with shift + arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Split in specified direction
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# Change container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+Control+space focus mode_toggle
+
+# Bind keys to switch to next workspace
+bindsym $mod+bracketright workspace next
+bindsym $mod+bracketleft workspace prev
+
+# Switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# Add resize keybindings in place of mode
+bindsym $mod+Control+Left resize shrink width 10 px or 10
+bindsym $mod+Control+Down resize grow height 10 px or 10
+bindsym $mod+Control+Up resize shrink height 10 px or 10
+bindsym $mod+Control+Right resize grow width 10 px or 10
+bindsym $mod+Shift+Control+Left resize shrink width 1 px or 1
+bindsym $mod+Shift+Control+Down resize grow height 1 px or 1
+bindsym $mod+Shift+Control+Up resize shrink height 1 px or 1
+bindsym $mod+Shift+Control+Right resize grow width 1 px or 1
+
+
+# Allow scripts to interface with dbus
+# exec_always --no-startup-id ~/scripts/misc/Xdbus.sh
+
+# Startup daemons for compositor and status bar
+exec_always --no-startup-id pkill picom; picom --no-use-damage -f
+exec_always --no-startup-id pkill dunst; dunst
+
+
+# # Use URxvt settings from Xresources
+# exec_always --no-startup-id xrdb ~/.Xresources
+# exec --no-startup-id pulseaudio -k; pulseaudio --start
+
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+
+focus_follows_mouse no
+exec_always --no-startup-id feh --bg-scale ~/wallpaper/city.jpg  
+exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec --no-startup-id ~/bin/natural_scrolling
+
+bindsym $mod+Shift+w exec --no-startup-id sh ~/scripts/i3lock/lock.sh
