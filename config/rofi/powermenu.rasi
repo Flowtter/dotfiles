@@ -1,7 +1,6 @@
 configuration {
     modi: "window,run,drun";
     theme: "clean";
-    show-icons: true;
     font: "Hack Nerd Font 10";
 }
 
@@ -14,7 +13,7 @@ configuration {
 
 #window {
     width: 450px;
-    height: 120px;
+    height: 77px;
     background-color: @background-solid;
     padding: 5px;
 }
@@ -27,22 +26,18 @@ configuration {
 }
 
 #listview {
-    columns: 4;
+    columns: 3;
     layout: vertical;
     background-color: transparent;
 }
 
 element {
-    margin: 8px;
-    padding: 10px;
+    margin: 5px;
+    padding: 20px;
     border-radius: 5px;
     orientation: vertical;
 }
 
-element-icon {
-    size: 48px;
-    margin: 2px;
-}
 
 element-text {
     horizontal-align: 0.5;

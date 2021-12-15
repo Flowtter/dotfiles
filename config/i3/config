@@ -1,3 +1,7 @@
+gaps outer -3
+gaps inner 12
+gaps top 22
+
 # Set mod variable to super key
 set $mod Mod4
 
@@ -6,11 +10,6 @@ set $rofi ~/scripts/rofi/launch.sh
 
 # Turn borders off
 for_window [class="^.*"] border pixel 0
-
-# Change gap size
-gaps outer 20
-gaps inner 20
-gaps top 25
 
 # Drag floating windows
 floating_modifier $mod
@@ -21,6 +20,7 @@ bindsym $mod+Return exec kitty
 
 # Kill focused window
 bindsym $mod+Shift+q kill
+bindsym --release $mod+k exec --no-startup-id xkill
 
 # Start rofi with appmenu and tabmenu
 bindsym $mod+d exec $rofi appmenu
@@ -63,7 +63,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 
 # Change container layout
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -88,6 +88,8 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+A workspace 99
+bindsym $mod+S workspace 100
 
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -100,6 +102,8 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+A move container to workspace 99
+bindsym $mod+Shift+S move container to workspace 100
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -130,12 +134,31 @@ exec_always --no-startup-id pkill dunst; dunst
 # exec_always --no-startup-id xrdb ~/.Xresources
 # exec --no-startup-id pulseaudio -k; pulseaudio --start
 
+#######
+
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+#exec_always --no-startup-id ~/scripts/i3.sh
+
+exec_always --no-startup-id /home/flowtter/scripts/downloads.sh
 
 
 focus_follows_mouse no
-exec_always --no-startup-id feh --bg-scale ~/wallpaper/city.jpg  
+exec_always --no-startup-id feh --bg-scale ~/wallpaper/tanjiro.jpg  
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec --no-startup-id ~/bin/natural_scrolling
 
 bindsym $mod+Shift+w exec --no-startup-id sh ~/scripts/i3lock/lock.sh
+bindsym $mod+Shift+f exec --no-startup-id gnome-control-center 
+
+bindsym $mod+p exec --no-startup-id flameshot full -c
+
+exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
+exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
+
+
+exec_always --no-startup-id pkill i3batwarn.sh; ~/scripts/i3batwarn.sh
+#exec_always --no-startup-id pkill i3batwarn.sh; ~/scripts/mouse.sh
+
+exec_always --no-startup-id /usr/lib/gsd-xsettings
+
+bindsym $mod+Shift+i exec --no-startup-id sh ~/scripts/wifi.sh
