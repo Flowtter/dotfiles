@@ -16,6 +16,3 @@ cp -r "./config/" "$HOME/.config/i3"
 cp -r "./config/" "$HOME/.config/picom"
 cp -r "./config/" "$HOME/.config/polybar"
 cp -r "./config/" "$HOME/.config/rofi"
-
-cp ./update.sh ./unpack.sh
-sed -i 's/\(".*"\) \(".*"\)/\2 \1/g' unpack.sh

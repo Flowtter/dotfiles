@@ -19,3 +19,4 @@ cp -r "$HOME/.config/rofi" "./config/"
 
 cp ./update.sh ./unpack.sh
 sed -i 's/\(".*"\) \(".*"\)/\2 \1/g' unpack.sh
+tail -n 4 "./unpack.sh" | wc -c | xargs -I {} truncate "./unpack.sh" -s -{}

@@ -129,12 +129,14 @@ imap <right> <nop>
 map <C-w><C-w> <nop>
 
 " unbind nerdtree on enter
-map <cr> <nop>
+map <CR> :!ls<cr>
 
 map <C-h> :tabp<cr>
 map <C-l> :tabn<cr>
-map <C-m> :Texplore<cr>
-
+map <C-j> :Texplore<cr>
+ 
+" Fix a bug with nerdtree
+map <C-m> <cr>
 
 " Format
 map <C-k> :ClangFormat<cr>
