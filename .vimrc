@@ -92,7 +92,6 @@ set wildmode=longest:full,full
 
 
 " Search
-set hlsearch
 set incsearch
 set ignorecase
 set smartcase
