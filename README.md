@@ -8,4 +8,4 @@ https://github.com/polybar/polybar
 
 https://github.com/dunst-project/dunst
 
-# picom.conf in .config not .config/picom**
+# picom.conf in .config not .config/picom

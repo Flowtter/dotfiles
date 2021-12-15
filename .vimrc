@@ -105,9 +105,10 @@ set autoindent
 set smartindent
 set ts=4 sw=4
 
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2
-autocmd FileType md setlocal ts=2 sts=2 sw=2
-autocmd FileType json setlocal ts=2 sts=2 sw=2
+let g:indentLine_fileType = ['yaml', 'md', 'json']
+autocmd FileType yaml setlocal ts=2 sw=2
+autocmd FileType md setlocal ts=2 sw=2
+autocmd FileType json setlocal ts=2 sw=2
 
 
 " Encoding
