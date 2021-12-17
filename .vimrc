@@ -71,15 +71,12 @@ filetype plugin indent on
 
 runtime! plugin/sensible.vim
 
+
 " Termdebug
 packadd termdebug
 let g:termdebug_popup=0
 let g:termdebug_wide=0
 
-packadd! vimspector
-let g:vimspector_enable_mappings='HUMAN'
-let g:vimspector_install_gadgets = [ 'debugpy' ]
-let g:vimspector_base_dir=expand( '$HOME/.vim/vimspector-config' )
 
 " Theming
 syntax on
