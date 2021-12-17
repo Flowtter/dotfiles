@@ -52,7 +52,6 @@ Plugin 'junegunn/vim-peekaboo'
 
 " Debugger (need to learn)
 " git clone https://github.com/puremourning/vimspector ~/.vim/pack/vimspector/opt/vimspector
-" Plugin 'puremourning/vimspector' -> Not working
 
 " Minimap (need cargo)
 "Plug 'wfxr/minimap.vim'
@@ -135,6 +134,8 @@ set encoding=utf-8 fileencodings=
 
 
 " Bindings
+let mapleader = "\<Space>"
+
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -157,8 +158,11 @@ map <C-j> :Texplore<cr>
  
 " Fix a bug with nerdtree
 map <C-m> <cr>
-map gf :edit <cfile><cr>
 
+" Ctags
+map <Leader>gd :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <Leader>gf :edit <cfile><cr>
+map <Leader>ct :!./scripts/ctags.sh<cr>
 
 " Format
 map <C-k> :ClangFormat<cr>
