@@ -167,3 +167,4 @@ touchkdir ()
 
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
+export TERM=xterm-256color

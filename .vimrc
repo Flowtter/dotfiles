@@ -34,7 +34,9 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Line
-Plugin 'itchyny/lightline.vim'
+"Plugin 'itchyny/lightline.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Indentation
 Plugin 'yggdroot/indentline'
@@ -48,19 +50,19 @@ Plugin 'wakatime/vim-wakatime'
 " Show registers content (mapped on ")
 Plugin 'junegunn/vim-peekaboo'
 
-" Abreviations (need to learn)
-"Plug 'SirVer/ultisnips'
-
 " Debugger (need to learn)
-"Plugin 'puremourning/vimspector'
+" git clone https://github.com/puremourning/vimspector ~/.vim/pack/vimspector/opt/vimspector
+" Plugin 'puremourning/vimspector' -> Not working
 
 " Minimap (need cargo)
 "Plug 'wfxr/minimap.vim'
 
-
 " Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+
+" Wiki
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
 filetype plugin indent on
@@ -72,15 +74,21 @@ packadd termdebug
 let g:termdebug_popup=0
 let g:termdebug_wide=0
 
+packadd! vimspector
+let g:vimspector_enable_mappings='HUMAN'
+let g:vimspector_install_gadgets = [ 'debugpy' ]
+let g:vimspector_base_dir=expand( '$HOME/.vim/vimspector-config' )
+
 " Theming
 syntax on
 set number
+let g:airline_theme='wombat'
 
 set textwidth=80
 set colorcolumn=80
 
 set list
-set listchars=tab:>-
+set listchars=tab:>-,eol:$
 
 set t_Co=256
 let &t_ut=''
@@ -88,12 +96,19 @@ let &t_ut=''
 augroup project
   autocmd!
   autocmd BufRead,BufNewFile *.h set filetype=c.doxygen
+  autocmd BufRead,BufNewFile c.snippets set filetype=c
+  autocmd BufRead,BufNewFile python.snippets set filetype=python
 augroup END
 
 
 " Command completion
 set wildmenu
 set wildmode=longest:full,full
+
+
+" Buffers
+set modifiable
+set hidden
 
 
 " Search
@@ -142,6 +157,8 @@ map <C-j> :Texplore<cr>
  
 " Fix a bug with nerdtree
 map <C-m> <cr>
+map gf :edit <cfile><cr>
+
 
 " Format
 map <C-k> :ClangFormat<cr>
@@ -181,8 +198,8 @@ set noswapfile
 " Zshrc alias exposed to vim (.zshenv)
 set shell=zsh\ -l
 
+
 " Plugins
-filetype plugin on
 set updatetime=250
 let g:gitgutter_terminal_reports_focus=0
 let g:gitgutter_realtime = 1
@@ -195,6 +212,12 @@ set noshowmode
 let g:python3_host_prog="/usr/bin/python3"
 let g:ycm_key_list_select_completion = ['']
 let g:ycm_key_list_previous_completion = ['']
+let g:ycm_key_list_stop_completion = ['<C-M>']
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 
 " Color theme
 colorscheme ocean
