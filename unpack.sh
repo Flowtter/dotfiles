@@ -9,6 +9,8 @@ cp ".zshrc" "$HOME/.zshrc"
 cp ".zshenv" "$HOME/.zshenv"
 cp ".clang-format" "$HOME/.clang-format"
 
+cp -r "./UltiSnips" "$HOME/.vim/UltiSnips"
+
 # config
 cp -r "./config/" "$HOME/.config/kitty"
 cp -r "./config/" "$HOME/.config/dunst"
