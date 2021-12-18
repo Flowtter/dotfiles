@@ -58,7 +58,7 @@ Plugin 'junegunn/vim-peekaboo'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+"Plugin 'honza/vim-snippets'
 
 " Wiki
 Plugin 'vimwiki/vimwiki'
@@ -87,7 +87,7 @@ set textwidth=80
 set colorcolumn=80
 
 set list
-set listchars=tab:>-,eol:$
+set listchars=tab:>-,eol:¬
 
 set t_Co=256
 let &t_ut=''
