@@ -213,8 +213,8 @@ set ttimeoutlen=50
 set noshowmode
 
 let g:python3_host_prog="/usr/bin/python3"
-let g:ycm_key_list_select_completion = ['']
-let g:ycm_key_list_previous_completion = ['']
+let g:ycm_key_list_select_completion = []
+let g:ycm_key_list_previous_completion = []
 let g:ycm_key_list_stop_completion = ['<C-M>']
 
 let g:UltiSnipsExpandTrigger="<tab>"
