@@ -8,16 +8,22 @@ cp "$HOME/.vimrc" ".vimrc"
 cp "$HOME/.zshrc" ".zshrc"
 cp "$HOME/.zshenv" ".zshenv"
 cp "$HOME/.clang-format" ".clang-format"
+cp "$HOME/.config/picom.conf" "picom.conf"
 
 cp -rT "$HOME/.vim/UltiSnips" "UltiSnips"
 
 # config
-cp -rT "$HOME/.config/kitty" "./config/"
-cp -rT "$HOME/.config/dunst" "./config/"
-cp -rT "$HOME/.config/i3" "./config/"
-cp -rT "$HOME/.config/picom" "./config/"
-cp -rT "$HOME/.config/polybar" "./config/"
-cp -rT "$HOME/.config/rofi" "./config/"
+mkdir -p "./config/kitty"
+mkdir -p "./config/dunst"
+mkdir -p "./config/i3"
+mkdir -p "./config/polybar"
+mkdir -p "./config/rofi"
+
+cp -rT "$HOME/.config/kitty" "./config/kitty"
+cp -rT "$HOME/.config/dunst" "./config/dunst"
+cp -rT "$HOME/.config/i3" "./config/i3"
+cp -rT "$HOME/.config/polybar" "./config/polybar"
+cp -rT "$HOME/.config/rofi" "./config/rofi"
 
 cp ./update.sh ./unpack.sh
 sed -i 's/\(".*"\) \(".*"\)/\2 \1/g' unpack.sh

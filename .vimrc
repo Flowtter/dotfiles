@@ -83,7 +83,6 @@ syntax on
 set number
 let g:airline_theme='wombat'
 
-set textwidth=80
 set colorcolumn=80
 
 set list
