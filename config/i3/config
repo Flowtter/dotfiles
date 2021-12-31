@@ -1,6 +1,7 @@
 gaps outer -3
 gaps inner 12
-gaps top 22
+smart_gaps on
+
 
 # Set mod variable to super key
 set $mod Mod4
@@ -27,21 +28,17 @@ bindsym $mod+d exec $rofi appmenu
 bindsym $mod+Tab exec dmenu_run
 bindsym $mod+Shift+e exec $rofi powermenu
 
-# Set up screenshots and partial screenshots
-bindsym --release Print exec maim ~/images/scrots/`date +%Y-%m-%d_%H:%M:%S`.png
-bindsym --release Shift+Print exec maim -s ~/images/scrots/`date +%Y-%m-%d_%H:%M:%S`.png
-
 # Bind audio keys to pactl volume control
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 
 # Bind brightness keys to light interface
-bindsym XF86MonBrightnessUp exec light -s sysfs/backlight/radeon_bl0 -A 5
-bindsym XF86MonBrightnessDown exec light -s sysfs/backlight/radeon_bl0 -U 5
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+
 
 # Move focus with the arrow keys
 bindsym $mod+Left focus left
@@ -63,7 +60,6 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 
 # Change container layout
-#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -139,7 +135,7 @@ exec_always --no-startup-id pkill dunst; dunst
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #exec_always --no-startup-id ~/scripts/i3.sh
 
-exec_always --no-startup-id /home/flowtter/scripts/downloads.sh
+exec_always --no-startup-id /home/coby/scripts/downloads.sh
 
 
 focus_follows_mouse no
@@ -162,3 +158,5 @@ exec_always --no-startup-id pkill i3batwarn.sh; ~/scripts/i3batwarn.sh
 exec_always --no-startup-id /usr/lib/gsd-xsettings
 
 bindsym $mod+Shift+i exec --no-startup-id sh ~/scripts/wifi.sh
+
+for_window [title="SuperMarioBros-*"] floating enable

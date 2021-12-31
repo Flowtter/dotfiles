@@ -1,128 +1,90 @@
-configuration {
-    modi: "window,run,drun";
-    theme: "clean";
-    show-icons: true;
-    font: "Hack Nerd Font 11";
-}
-
-@import "colors.rasi"
-
 * {
-    selected-background: #d8c45d;
-    selected-foreground: black;
+  black:      #000000;
+  red:        #e06c75;
+  green:      #98c379;
+  yellow:     #e5c07b;
+  blue:       #61afef;
+  mangenta:   #c678dd;
+  cyan:       #56b6c2;
+  emphasis:   #5c6370;
+  text:       #dfdfdf;
+  text-alt:   #b2b2b2;
+  fg:         #abb2bf;
+  bg:         #282c34;
+
+  spacing: 0;
+  background-color: transparent;
+
+  font: "Knack Nerd Font 14";
+  text-color: @text;
 }
 
-#window {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 90px 120px;
+window {
+  transparency: "real";
+  fullscreen: true;
+  background-color: #282c34dd;
 }
 
-#mainbox {
-    border:  0;
-    border-radius: 15;
-    padding: 20;
-    background-color: @background-solid;
+mainbox {
+  padding: 30% 30%;
 }
 
-#textbox {
-    text-color: @foreground;
+inputbar {
+  margin: 0px 0px 20px 0px;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
 }
 
-#listview {
-    columns: 5;
-    spacing: 0px;
-    cycle: false;
-    dynamic: true;
-    layout: vertical;
-    background-color: transparent;
-    padding: 12px 0px 0px 0px;
+prompt {
+  text-color: @blue;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+  text-color: @text-alt;
+}
+
+entry {
+  margin: 0px 10px;
+}
+
+listview {
+  spacing: 5px;
+  dynamic: true;
+  scrollbar: false;
 }
 
 element {
-    margin: 4px;
-    padding: 22px 10px 22px 10px;
-    border-radius: 16px;
-    orientation: vertical;
+  padding: 5px;
+  text-color: @text-alt;
+  highlight: bold #95ee8f; /* green */
+  border-radius: 3px;
 }
 
-element-icon {
-    size: 90px;
-    margin: 0 10px 0 0;
+element selected {
+  background-color: @emphasis;
+  text-color: @text;
 }
 
-element-text {
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
+element urgent, element selected urgent {
+  text-color: @red;
 }
 
-#element.normal.normal {
-    background-color: transparent;
-    text-color:       @foreground;
+element active, element selected active {
+  text-color: @purple;
 }
 
-#element.selected.normal {
-    background-color: @selected-background;
-    text-color:       @selected-foreground;
-    border-color: #d07ef2;
+message {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @emphasis;
+  border: 1px;
+  border-color: @cyan;
 }
 
-#element.alternate.normal {
-    background-color: transparent;
-    text-color:       @foreground;
+button selected {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @emphasis;
 }
 
-#mode-switcher {
-    border:       0px 0px 0px ;
-    border-color: @separatorcolor;
-}
-
-#button {
-    spacing:    0;
-    text-color: @foreground;
-}
-
-#button.selected {
-    background-color: @selected-background;
-    text-color:       @selected-foreground;
-}
-
-#inputbar {
-    spacing: 0;
-    text-color: @selected-foreground;
-    padding: 10px;
-    background-color: @selected-background;
-    /*rgba(0,0,0,0.5);*/
-    border-radius: 10px;
-}
-
-#case-indicator {
-    spacing:    0;
-    text-color: @selected-foreground;
-    background-color: rgba(0,0,0,0);
-}
-
-#entry {
-    spacing:    0;
-    text-color: @selected-foreground;
-    background-color: rgba(0,0,0,0);
-}
-
-#prompt {
-    spacing:    0;
-    text-color: @selected-foreground;
-    background-color: rgba(0,0,0,0);
-}
-
-#textbox-prompt-colon {
-    expand:     false;
-    str:        ":";
-    margin:     0px 0.3em 0em 0em ;
-    text-color: @selected-foreground;
-    background-color: rgba(0,0,0,0);
-}
-
-#inputbar {
-    children: [prompt,textbox-prompt-colon,entry,case-indicator];
-}

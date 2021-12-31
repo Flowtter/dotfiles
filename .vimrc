@@ -54,7 +54,7 @@ Plugin 'junegunn/vim-peekaboo'
 " git clone https://github.com/puremourning/vimspector ~/.vim/pack/vimspector/opt/vimspector
 
 " Minimap (need cargo)
-"Plug 'wfxr/minimap.vim'
+Plugin 'wfxr/minimap.vim'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -220,8 +220,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-set statusline+=%{gutentags#statusline()}
-
 " Found on https://www.reddit.com/r/vim/comments/d77t6j/guide_how_to_setup_ctags_with_gutentags_properly/
 let g:gutentags_add_default_project_roots = 0
 let g:gutentags_project_root = ['package.json', '.git']
@@ -283,6 +281,10 @@ let g:gutentags_ctags_exclude = [
       \ ]
 
 
+let g:minimap_width = 10
+let g:minimap_auto_start = 1
+let g:minimap_auto_start_win_enter = 1
 
 " Color theme
 colorscheme ocean
+"hi Normal guibg=NONE ctermbg=NONE

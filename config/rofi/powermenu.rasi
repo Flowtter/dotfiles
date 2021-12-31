@@ -7,8 +7,8 @@ configuration {
 @import "colors.rasi"
 
 * {
-    selected-background: #d8c45d;
-    selected-foreground: black;
+    selected-background: #61afef;
+    horizontal-align: 0.5;
 }
 
 #window {
