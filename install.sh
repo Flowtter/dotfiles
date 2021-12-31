@@ -40,6 +40,7 @@ sudo ln -s /usr/include/jsoncpp/json/ /usr/include/json
 
 git clone https://github.com/jaagr/polybar.git
 cd polybar && ./build.sh
+cd /tmp
 
 # App
 wget https://discord.com/api/download?platform=linux&format=deb > discord.deb
