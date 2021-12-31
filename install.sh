@@ -17,6 +17,7 @@ sudo apt-get install -y python3.9
 
 sudo apt-get install -y htop nvtop neofetch nmtui
 
+sudo apt-get install -y blender
 # Nvidia
 sudo apt install nvidia-driver-390
 
@@ -49,6 +50,8 @@ cd /tmp
 # App
 wget https://discord.com/api/download?platform=linux&format=deb > discord.deb
 sudo dpkg -i discord.deb
+wget https://mango-lychee.nyc3.cdn.digitaloceanspaces.com/LycheeSlicer-3.6.2.deb > lychee.deb
+sudo dpkg -i lychee.deb
 
 # Unpack
 bash unpack.sh
@@ -69,6 +72,10 @@ cd YouCompleteMe
 
 sudo apt-get cargo
 vim +PluginInstall +qall
+
+# Wallpaper
+mkdir $HOME/wallpaper
+wget https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/944a540a-5068-4583-be10-4ba056c879b6/ddpmilb-ad362e10-0d8d-4180-a5d6-838b95c9edcd.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk0NGE1NDBhLTUwNjgtNDU4My1iZTEwLTRiYTA1NmM4NzliNlwvZGRwbWlsYi1hZDM2MmUxMC0wZDhkLTQxODAtYTVkNi04MzhiOTVjOWVkY2QucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.R3GVdiG15uwSS8N3xXQIUVhu9KlW2vF5R6AAAnCTw_E > $HOME/wallpaper/tanjiro.jpg
 
 # Done
 sudo apt update
