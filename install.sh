@@ -15,7 +15,7 @@ sudo apt-get install -y kitty zsh
 sudo apt-get install -y meson ninja
 sudo apt-get install -y python3.9
 
-sudo apt-get install -y htop nvtop neofetch nmtui
+sudo apt-get install -y htop nvtop neofetch nmtui brightnessctl
 
 sudo apt-get install -y blender
 # Nvidia
