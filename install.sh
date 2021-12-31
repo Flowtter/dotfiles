@@ -3,6 +3,7 @@ cd /tmp
 # Apt
 sudo apt-get install -y wget
 sudo apt-get install -y git
+sudo apt-get install -y xrandr arandr
 
 #sudo apt-get install -y i3
 sudo add-apt-repository -y ppa:regolith-linux/stable
@@ -15,6 +16,9 @@ sudo apt-get install -y meson ninja
 sudo apt-get install -y python3.9
 
 sudo apt-get install -y htop nvtop neofetch nmtui
+
+# Nvidia
+sudo apt install nvidia-driver-390
 
 # Oh-my-zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -70,3 +74,4 @@ vim +PluginInstall +qall
 sudo apt update
 sudo apt upgrade
 cd $HOME
+echo "reboot, switch to i3 and try `nvidia-smi`"
