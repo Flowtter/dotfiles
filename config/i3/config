@@ -36,8 +36,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 
 
 # Bind brightness keys to light interface
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set -10%
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 
 
 # Move focus with the arrow keys
