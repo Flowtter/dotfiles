@@ -262,7 +262,7 @@ ramp-capacity-4 = %{F#00ff00}
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 70
 
 format = <ramp> <label>
 format-underline = #fc4f00

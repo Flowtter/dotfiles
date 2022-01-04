@@ -41,10 +41,11 @@ sudo apt-get install -y kitty zsh
 
 sudo apt-get install -y htop nvtop neofetch brightnessctl
 
+sudo apt-get install -y flameshot
 sudo apt-get install -y blender
 sudo apt-get install -y lxappearance
 # Nvidia
-sudo apt-get install nvidia-driver-460 # no -y
+sudo apt-get install nvidia-driver-470
 
 
 # Picom
