@@ -1,0 +1,116 @@
+{
+    "imp": {
+        "prefix": "imp",
+        "body": [
+            "import ${1} ${2:as ${3}}"
+        ]
+    },
+    "from": {
+        "prefix": "from",
+        "body": [
+            "from ${1} import ${2}"
+        ]
+    },
+    "cwd": {
+        "prefix": "cwd",
+        "body": [
+            "os.path.join(os.getcwd(), os.path.dirname(__file__))"
+        ]
+    },
+    "func": {
+        "prefix": "func",
+        "body": [
+            "def ${1:my_func}(${2:self, }${3:index: int}) ${4:-> ${5:int}}:",
+            "    $0",
+            "    return 0"
+        ]
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "for ${1:i} in range(${2}):",
+            "    $0"
+        ]
+    },
+    "fore": {
+        "prefix": "fore",
+        "body": [
+            "for ${1:item} in $1s:",
+            "    $0"
+        ]
+    },
+    "while": {
+        "prefix": "while",
+        "body": [
+            "while(${1:True}):",
+            "    $0"
+        ]
+    },
+    "ofor": {
+        "prefix": "ofor",
+        "body": [
+            "[${1} for ${2:i} in ${3:range(${4})}${5:$2s}]$0"
+        ]
+    },
+    "re": {
+        "prefix": "re",
+        "body": [
+            "return $0"
+        ]
+    },
+    "try": {
+        "prefix": "try",
+        "body": [
+            "try:",
+            "    $1",
+            "except ${2:Exception as ${3:e}}:",
+            "    ${4:print($3)}"
+        ]
+    },
+    "if": {
+        "prefix": "if",
+        "body": [
+            "if $1:",
+            "    $0"
+        ]
+    },
+    "elif": {
+        "prefix": "elif",
+        "body": [
+            "elif $1:",
+            "    $0"
+        ]
+    },
+    "else": {
+        "prefix": "else",
+        "body": [
+            "else:",
+            "    $0"
+        ]
+    },
+    "pr": {
+        "prefix": "pr",
+        "body": [
+            "print(${1:f}\"${2}\")"
+        ]
+    },
+    "logtest": {
+        "prefix": "logtest",
+        "body": [
+            "if ${1}:",
+            "    print(\"--- [\\033[31mKO\\033[m]\", ${2}, \"---\")",
+            "    ${3:failed += 1}",
+            "else:",
+            "    print(\"--- [\\033[32mOK\\033[m]\", $2, \"---\")"
+        ]
+    },
+    "cl": {
+        "prefix": "cl",
+        "description": "class ...",
+        "body": [
+            "class $1:",
+            "    def __init__(self, $2):",
+            "        $0"
+        ]
+    }
+}

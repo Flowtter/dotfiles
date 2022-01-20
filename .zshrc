@@ -69,3 +69,7 @@ export PATH=~/go/bin:~/.cargo/bin:$PATH
 echo 'export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}' > $HOME/.bashrc
 
 # looking for nmtui ? bluetoothctl ?
+export PGHOST="/tmp"
+export PGDATA="$HOME/postgres_data"
+
+alias "bat"="batcat"

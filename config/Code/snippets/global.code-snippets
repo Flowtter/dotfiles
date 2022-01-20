@@ -1,0 +1,10 @@
+{
+    "s": {
+        "prefix": "s",
+        "description": "make a new snippet",
+        "body": [
+            "snippet ${2}",
+            "${4}"
+        ]
+    }
+}

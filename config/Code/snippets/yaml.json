@@ -1,0 +1,20 @@
+{
+    "def": {
+        "prefix": "def",
+        "body": [
+            "default:",
+            "  same_bash_args: true",
+            "",
+            "tests:",
+            ""
+        ]
+    },
+    "tst": {
+        "prefix": "tst",
+        "body": [
+            "${1}:",
+            "  args: -c '${2}'",
+            ""
+        ]
+    }
+}

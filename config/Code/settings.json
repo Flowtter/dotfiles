@@ -1,0 +1,61 @@
+{
+    "workbench.colorTheme": "Bearded Theme Arc Blueberry",
+    "tabnine.experimentalAutoImports": true,
+    "vim.vimrc.enable": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "vim.leader": "<Space>",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                ":",
+                "W"
+            ],
+            "commands": [
+                "workbench.action.files.save",
+            ]
+        },
+        {
+            "before": [
+                "<C-b>"
+            ],
+            "commands": [
+                "workbench.action.toggleActivityBarVisibility",
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        {
+            "before": [
+                "<C-k>"
+            ],
+            "commands": [
+                "editor.action.formatDocument"
+            ]
+        },
+        {
+            "before": [
+                "<C-Shift>",
+                "v"
+            ],
+            "commands": [
+                "editor.action.paste"
+            ]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        }
+    ],
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false
+}

@@ -5,6 +5,8 @@ call vundle#begin()
 " Vundle
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'vim-scripts/SQLComplete.vim'
+
 " Formating
 Plugin 'rhysd/vim-clang-format'
 Plugin 'Chiel92/vim-autoformat'

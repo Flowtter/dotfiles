@@ -18,12 +18,17 @@ mkdir -p "./config/dunst"
 mkdir -p "./config/i3"
 mkdir -p "./config/polybar"
 mkdir -p "./config/rofi"
+mkdir -p "./config/Code/snippets"
 
 cp -rT "$HOME/.config/kitty" "./config/kitty"
 cp -rT "$HOME/.config/dunst" "./config/dunst"
 cp -rT "$HOME/.config/i3" "./config/i3"
 cp -rT "$HOME/.config/polybar" "./config/polybar"
 cp -rT "$HOME/.config/rofi" "./config/rofi"
+
+cp     "$HOME/.config/Code/User/keybindings.json" "./config/Code"
+cp     "$HOME/.config/Code/User/settings.json" "./config/Code"
+cp -rT "$HOME/.config/Code/User/snippets" "./config/Code/snippets"
 
 cp ./update.sh ./unpack.sh
 sed -i 's/\(".*"\) \(".*"\)/\2 \1/g' unpack.sh
