@@ -1,61 +1,135 @@
 {
-    "workbench.colorTheme": "Bearded Theme Arc Blueberry",
-    "tabnine.experimentalAutoImports": true,
-    "vim.vimrc.enable": true,
-    "editor.acceptSuggestionOnEnter": "off",
-    "vim.leader": "<Space>",
-    "vim.normalModeKeyBindings": [
-        {
-            "before": [
-                ":",
-                "W"
-            ],
-            "commands": [
-                "workbench.action.files.save",
-            ]
-        },
-        {
-            "before": [
-                "<C-b>"
-            ],
-            "commands": [
-                "workbench.action.toggleActivityBarVisibility",
-                "workbench.action.toggleSidebarVisibility"
-            ]
-        },
-        {
-            "before": [
-                "<C-k>"
-            ],
-            "commands": [
-                "editor.action.formatDocument"
-            ]
-        },
-        {
-            "before": [
-                "<C-Shift>",
-                "v"
-            ],
-            "commands": [
-                "editor.action.paste"
-            ]
-        },
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "<leader>",
-                "w"
-            ],
-            "commands": [
-                "workbench.action.splitEditor"
-            ]
-        }
-    ],
-    "editor.cursorBlinking": "phase",
-    "editor.cursorSmoothCaretAnimation": true,
-    "security.workspace.trust.untrustedFiles": "open",
-    "workbench.iconTheme": "material-icon-theme",
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false
+  "tabnine.experimentalAutoImports": true,
+  "editor.acceptSuggestionOnEnter": "off",
+  "vim.leader": "<Space>",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        ":",
+        "W"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
+    },
+    {
+      "before": [
+        "<C-b>"
+      ],
+      "commands": [
+        "workbench.action.toggleActivityBarVisibility",
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "<C-Shift>",
+        "v"
+      ],
+      "commands": [
+        "editor.action.paste"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.splitEditor"
+      ]
+    }
+  ],
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "security.workspace.trust.untrustedFiles": "open",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "go.toolsManagement.autoUpdate": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.exclude": {
+    "**/__pycache__/": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/app/core/": true
+  },
+  "editor.formatOnSave": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "redhat.telemetry.enabled": false,
+  "files.insertFinalNewline": true,
+  "clangd.path": "/home/coby/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/13.0.0/clangd_13.0.0/bin/clangd",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "yaml": true,
+    "vhdl": true,
+    "python": true
+  },
+  "svelte.enable-ts-plugin": true,
+  "javascript.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": [
+    "javascript"
+  ],
+  "python.formatting.provider": "black",
+  "vim.vimrc.enable": true,
+  "[nginx]": {
+    "editor.defaultFormatter": "raynigon.nginx-formatter"
+  },
+  "omnisharp.useModernNet": false,
+  "blockman.n01LineHeight": 0,
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f"
+  },
+  "editor.wordWrap": "off",
+  "diffEditor.wordWrap": "off",
+  "editor.guides.indentation": false,
+  "editor.guides.bracketPairs": false,
+  "editor.inlayHints.enabled": "off",
+  "blockman.n04ColorComboPreset": "Small Galaxy (Solid colors)",
+  "blockman.n03MaxDepth": 20,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "git.openRepositoryInParentFolders": "always",
+  "settingsSync.ignoredSettings": [
+    "vim.vimrc.enable"
+  ],
+  "stm32-for-vscode.openOCDPath": false,
+  "stm32-for-vscode.makePath": "/usr/bin/make",
+  "stm32-for-vscode.armToolchainPath": "/usr/bin",
+  "[vhdl]": {
+    "editor.defaultFormatter": "Vinrobot.vhdl-formatter"
+  },
+  "C_Cpp.default.includePath": [
+    "/home/coby/.opam/default/lib/heptagon/c"
+  ],
+	"workbench.colorTheme": "Bearded Theme Arc Eggplant",
+  "files.associations": {
+    "*.rmd": "markdown"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "arduino.useArduinoCli": true,
+  "editor.inlineSuggest.enabled": true
 }
