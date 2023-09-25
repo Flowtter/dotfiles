@@ -26,6 +26,9 @@ cp -rT "./config/i3" "$HOME/.config/i3"
 cp -rT "./config/polybar" "$HOME/.config/polybar"
 cp -rT "./config/rofi" "$HOME/.config/rofi"
 
-cp     "./config/Code" "$HOME/.config/Code/User/keybindings.json"
-cp     "./config/Code" "$HOME/.config/Code/User/settings.json"
+mkdir -p "$HOME/.config/Code/User/"
+
+cp -rT "./config/Code" "$HOME/.config/Code/User/keybindings.json"
+cp -rT "./config/Code" "$HOME/.config/Code/User/settings.json"
 cp -rT "./config/Code/snippets" "$HOME/.config/Code/User/snippets"
+

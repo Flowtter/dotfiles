@@ -92,17 +92,6 @@ sudo apt-get install -y mono-complete golang nodejs default-jdk npm
 sudo apt-get install -y -ctags
 mkdir $HOME/.vim/bundle/
 cd $HOME/.vim/bundle/
-git clone https://github.com/tabnine/YouCompleteMe.git
-cd YouCompleteMe
-git submodule update --init --recursive
-./install.py --all
-
-sudo apt-get install -y cargo
-vim +PluginInstall +qall
-
-git clone https://github.com/wfxr/code-minimap.git
-cd code-minimap
-cargo install --locked code-minimap
 
 # Wallpaper
 mkdir $HOME/wallpaper
